@@ -1,9 +1,9 @@
-var Issue = Backbone.Model.extend({ //this is the model for one issue
-
-});
+var Issue = Backbone.Model.extend();
 
 var IssuesCollection = Backbone.Collection.extend({
 
-  url: "../issues.json", model: Issue
-
+  url: "issues.json", 
+  model: Issue
+  
 });
+
