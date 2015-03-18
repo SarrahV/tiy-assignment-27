@@ -4,7 +4,10 @@
 
   render: function(){
     return (
-       React.createElement("li", {key: index}, name, " ", React.createElement("progress", {max: "1", value: "{progress}"}))
+      React.createElement("li", null, 
+        this.props.model.get("name"), 
+        React.createElement("progress", {max: "1", value: this.props.model.get("progress")})
+      )
     );
   }
  });
@@ -16,10 +19,8 @@
   },
 
   render: function(){
-     return (
-      React.createElement("div", {className: "react-view"}, 
-        React.createElement("ul", null, this.props.collection.map(this.getItem))
-      )
+    return (
+      React.createElement("ul", null, this.props.collection.map(this.getItem))
     );
   }
 

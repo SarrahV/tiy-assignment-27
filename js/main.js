@@ -7,22 +7,21 @@ $(function(){
     issues.each(function(model){
 
       var issueView = new IssueView({model: model});
-      $(".backbone-view").append(issueView.render().el);
+      $(".backbone-view ul").append(issueView.render().el);
       
     });
   });
 });
 
-// $(function(){
+$(function(){
 
-//   var issuesCollection = new bullshit.models.IssuesCollection();
+  var issuesCollection = new bullshit.models.IssuesCollection();
 
-//   var elem = React.createElement(bullshit.views.List, {
-//     collection: issuesCollection
-//   });
+  var elem = React.createElement(bullshit.views.List, {
+    collection: issuesCollection
+  });
 
-//   window.issuesCollection = issuesCollection;
-
-//   React.render(elem, document.body);
-
-// });
+  issuesCollection.fetch().done(function(){
+    React.render(elem, document.querySelector('.react-view'));
+  });
+});

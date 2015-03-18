@@ -4,7 +4,10 @@
 
   render: function(){
     return (
-       <li key={index}>{name} <progress max="1" value="{progress}"></progress></li>
+      <li>
+        {this.props.model.get("name")}
+        <progress max="1" value={this.props.model.get("progress")}></progress>
+      </li>
     );
   }
  });
@@ -16,10 +19,8 @@
   },
 
   render: function(){
-     return (
-      <div className="react-view">
-        <ul>{this.props.collection.map(this.getItem)}</ul>
-      </div>
+    return (
+      <ul>{this.props.collection.map(this.getItem)}</ul>
     );
   }
 
