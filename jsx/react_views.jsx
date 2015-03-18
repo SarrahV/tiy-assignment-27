@@ -4,7 +4,7 @@
 
   render: function(){
     return (
-       React.createElement("li", {key: index}, name, " ", React.createElement("progress", {max: "1", value: "{progress}"}))
+       <li key={index}>{name} <progress max="1" value="{progress}"></progress></li>
     );
   }
  });
@@ -12,14 +12,14 @@
  var List = React.createBackboneClass({
 
   getItem: function(model, index){
-    return React.createElement(ListItem, {model: model, key: index});
+    return <ListItem model={model} key={index}/>;
   },
 
   render: function(){
      return (
-      React.createElement("div", {className: "react-view"}, 
-        React.createElement("ul", null, this.props.collection.map(this.getItem))
-      )
+      <div className="react-view">
+        <ul>{this.props.collection.map(this.getItem)}</ul>
+      </div>
     );
   }
 

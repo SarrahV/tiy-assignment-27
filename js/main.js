@@ -13,3 +13,16 @@ $(function(){
   });
 });
 
+// $(function(){
+
+//   var issuesCollection = new bullshit.models.IssuesCollection();
+
+//   var elem = React.createElement(bullshit.views.List, {
+//     collection: issuesCollection
+//   });
+
+//   window.issuesCollection = issuesCollection;
+
+//   React.render(elem, document.body);
+
+// });
