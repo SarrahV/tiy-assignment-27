@@ -5,8 +5,7 @@
   render: function(){
     return (
       React.createElement("li", null, 
-        this.props.model.get("name"), 
-        React.createElement("progress", {max: "1", value: this.props.model.get("progress")})
+        this.props.model.get("name"), " ", React.createElement("progress", {max: "1", value: this.props.model.get("progress")})
       )
     );
   }

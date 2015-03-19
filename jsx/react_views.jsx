@@ -5,8 +5,7 @@
   render: function(){
     return (
       <li>
-        {this.props.model.get("name")}
-        <progress max="1" value={this.props.model.get("progress")}></progress>
+        {this.props.model.get("name")} <progress max="1" value={this.props.model.get("progress")}></progress>
       </li>
     );
   }
